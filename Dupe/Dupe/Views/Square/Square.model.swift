@@ -7,19 +7,21 @@
 
 import Foundation
 
+private let baseScale = 1.0
+private let bounceModifier = 0.2
+private let maxSize = baseScale + bounceModifier
+
 extension Square {
     @Observable
     class ViewModel {
-        private let bounceModifier = 0.2
-
-        private(set) var scale = 1.0
+        private(set) var scale = baseScale
 
         func grow() {
-            scale += bounceModifier
+            scale = maxSize
         }
 
         func shrink() {
-            scale -= bounceModifier
+            scale = baseScale
         }
     }
 }

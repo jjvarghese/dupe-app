@@ -15,18 +15,19 @@ struct Square: View {
     @State private var viewModel = ViewModel()
 
     var body: some View {
-        Button("Square") {
-            onSquarePress()
-        }
-        .labelsHidden()
-        .frame(width: size,
-               height: size)
-        .background(.blue)
-        .clipShape(.buttonBorder)
-        .scaleEffect(viewModel.scale)
+        Color(.blue)
+            .frame(width: size,
+                   height: size)
+            .clipShape(.buttonBorder)
+            .scaleEffect(viewModel.scale)
+            .gesture(
+                DragGesture()
+                    .onChanged { _ in onSquarePress() }
+            )
     }
 
     private func onSquarePress() {
+        print("onSquarePress")
         withAnimation(.spring(duration: bounceDuration,
                               bounce: bounceAmount))
         {

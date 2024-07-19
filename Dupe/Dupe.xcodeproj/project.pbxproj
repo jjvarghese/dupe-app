@@ -13,7 +13,6 @@
 		F1C72FCD2C2C5236009F31AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C72FCC2C2C5236009F31AD /* Preview Assets.xcassets */; };
 		F1C72FD42C2C52AA009F31AD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FD32C2C52AA009F31AD /* Square.swift */; };
 		F1C72FD82C2C52F3009F31AD /* Square.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FD72C2C52F3009F31AD /* Square.model.swift */; };
-		F1C72FDA2C2C5E3D009F31AD /* Square.gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FD92C2C5E3D009F31AD /* Square.gesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,6 @@
 		F1C72FCC2C2C5236009F31AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1C72FD32C2C52AA009F31AD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		F1C72FD72C2C52F3009F31AD /* Square.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.model.swift; sourceTree = "<group>"; };
-		F1C72FD92C2C5E3D009F31AD /* Square.gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.gesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +55,7 @@
 		F1C72FC42C2C5234009F31AD /* Dupe */ = {
 			isa = PBXGroup;
 			children = (
+				F1C72FDD2C2C65D4009F31AD /* Models */,
 				F1C72FD52C2C52B2009F31AD /* Views */,
 				F1C72FC52C2C5234009F31AD /* DupeApp.swift */,
 				F1C72FC72C2C5234009F31AD /* ContentView.swift */,
@@ -87,9 +86,15 @@
 			children = (
 				F1C72FD32C2C52AA009F31AD /* Square.swift */,
 				F1C72FD72C2C52F3009F31AD /* Square.model.swift */,
-				F1C72FD92C2C5E3D009F31AD /* Square.gesture.swift */,
 			);
 			path = Square;
+			sourceTree = "<group>";
+		};
+		F1C72FDD2C2C65D4009F31AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C72FDA2C2C5E3D009F31AD /* Square.gesture.swift in Sources */,
 				F1C72FD42C2C52AA009F31AD /* Square.swift in Sources */,
 				F1C72FD82C2C52F3009F31AD /* Square.model.swift in Sources */,
 				F1C72FC82C2C5234009F31AD /* ContentView.swift in Sources */,

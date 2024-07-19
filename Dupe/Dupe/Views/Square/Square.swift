@@ -15,6 +15,7 @@ struct Square: View {
     var squareId: String = UUID().uuidString
     var row: Int
     var column: Int
+    var spacing: CGFloat
 
     @Binding var currentSquareId: String?
     @Binding var dragPosition: CGPoint
@@ -33,10 +34,6 @@ struct Square: View {
     }
 
     private func onSquareDragOver() {
-        print("col", column)
-        print("row", row)
-        print("**")
-
         withAnimation(.spring(duration: bounceDuration,
                               bounce: bounceAmount))
         {
@@ -60,10 +57,11 @@ struct Square: View {
     }
 
     private func isDraggingOverSquare(_ position: CGPoint) -> Bool {
-        let xStart = CGFloat(column) * size
-        let xEnd = xStart + size
-        let yStart = CGFloat(row) * size
-        let yEnd = yStart + size
+        let area = size + spacing
+        let xStart = CGFloat(column) * area
+        let xEnd = xStart + area
+        let yStart = CGFloat(row) * area
+        let yEnd = yStart + area
 
         return position.x > xStart && position.x < xEnd && position.y > yStart && position.y < yEnd
     }
@@ -78,6 +76,7 @@ struct Square_Previews: PreviewProvider {
         Square(
             row: 0,
             column: 0,
+            spacing: 5.0,
             currentSquareId: $currentSquareId,
             dragPosition: $dragPosition
         )

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let SPACING = 8.0
+let SPACING = 6.0
 
 struct Grid: View {
     @State private var dragOffsets: [Int: CGSize] = [:]
@@ -40,6 +40,7 @@ struct Grid: View {
                     currentSquareId = nil
                 }
         )
+        .background(.black)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
     }

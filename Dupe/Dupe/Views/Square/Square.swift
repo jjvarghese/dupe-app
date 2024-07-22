@@ -8,7 +8,7 @@
 import SwiftUI
 
 private let baseScale = 1.0
-private let bounceModifier = 0.2
+private let bounceModifier = 0.1
 private let maxSize = baseScale + bounceModifier
 private let size = 50.0
 private let bounceDuration = 0.2

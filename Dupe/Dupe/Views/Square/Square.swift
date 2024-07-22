@@ -25,7 +25,7 @@ struct Square: View {
     @Binding var dragPosition: CGPoint
 
     @State private var scale = baseScale
-    @State private var color: Color = .blue
+    @State private var color: Color = .rubikBlue
     
     private let cornerRadius: CGFloat = 8.0
     
@@ -53,7 +53,7 @@ struct Square: View {
 
     private func shrink() {
         scale = baseScale
-        color = .blue
+        color = .rubikBlue
     }
 
     // MARK: - Drag Calculation -

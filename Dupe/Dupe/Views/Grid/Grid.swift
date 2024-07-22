@@ -41,7 +41,7 @@ struct Grid: View {
                 }
         )
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.pink)
+        .background(.white)
     }
 }
 

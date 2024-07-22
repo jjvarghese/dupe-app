@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Grid.swift
 //  Dupe
 //
 //  Created by Varghese, Joshua on 26.06.24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-let SPACING = 5.0
+let SPACING = 8.0
 
-struct ContentView: View {
+struct Grid: View {
     @State private var dragOffsets: [Int: CGSize] = [:]
     @State private var currentSquareId: String? = nil
     @State private var dragPosition: CGPoint = .zero
@@ -40,9 +40,11 @@ struct ContentView: View {
                     currentSquareId = nil
                 }
         )
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.pink)
     }
 }
 
 #Preview {
-    ContentView()
+    Grid()
 }

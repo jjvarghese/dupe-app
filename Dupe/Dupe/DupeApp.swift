@@ -11,7 +11,7 @@ import SwiftUI
 struct DupeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Grid()
         }
     }
 }

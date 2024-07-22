@@ -8,21 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F1C72FC62C2C5234009F31AD /* DupeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FC52C2C5234009F31AD /* DupeApp.swift */; };
-		F1C72FC82C2C5234009F31AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FC72C2C5234009F31AD /* ContentView.swift */; };
+		F1C72FC82C2C5234009F31AD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FC72C2C5234009F31AD /* Grid.swift */; };
 		F1C72FCA2C2C5236009F31AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C72FC92C2C5236009F31AD /* Assets.xcassets */; };
 		F1C72FCD2C2C5236009F31AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C72FCC2C2C5236009F31AD /* Preview Assets.xcassets */; };
 		F1C72FD42C2C52AA009F31AD /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FD32C2C52AA009F31AD /* Square.swift */; };
-		F1C72FD82C2C52F3009F31AD /* Square.model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C72FD72C2C52F3009F31AD /* Square.model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1C72FC22C2C5234009F31AD /* Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C72FC52C2C5234009F31AD /* DupeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeApp.swift; sourceTree = "<group>"; };
-		F1C72FC72C2C5234009F31AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F1C72FC72C2C5234009F31AD /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		F1C72FC92C2C5236009F31AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C72FCC2C2C5236009F31AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1C72FD32C2C52AA009F31AD /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
-		F1C72FD72C2C52F3009F31AD /* Square.model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1303B7D2C4A751E00E25788 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				F1C72FC72C2C5234009F31AD /* Grid.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
 		F1C72FB92C2C5234009F31AD = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +61,8 @@
 		F1C72FC42C2C5234009F31AD /* Dupe */ = {
 			isa = PBXGroup;
 			children = (
-				F1C72FDD2C2C65D4009F31AD /* Models */,
 				F1C72FD52C2C52B2009F31AD /* Views */,
 				F1C72FC52C2C5234009F31AD /* DupeApp.swift */,
-				F1C72FC72C2C5234009F31AD /* ContentView.swift */,
 				F1C72FC92C2C5236009F31AD /* Assets.xcassets */,
 				F1C72FCB2C2C5236009F31AD /* Preview Content */,
 			);
@@ -76,6 +80,7 @@
 		F1C72FD52C2C52B2009F31AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F1303B7D2C4A751E00E25788 /* Grid */,
 				F1C72FD62C2C52B9009F31AD /* Square */,
 			);
 			path = Views;
@@ -85,16 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F1C72FD32C2C52AA009F31AD /* Square.swift */,
-				F1C72FD72C2C52F3009F31AD /* Square.model.swift */,
 			);
 			path = Square;
-			sourceTree = "<group>";
-		};
-		F1C72FDD2C2C65D4009F31AD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C72FD42C2C52AA009F31AD /* Square.swift in Sources */,
-				F1C72FD82C2C52F3009F31AD /* Square.model.swift in Sources */,
-				F1C72FC82C2C5234009F31AD /* ContentView.swift in Sources */,
+				F1C72FC82C2C5234009F31AD /* Grid.swift in Sources */,
 				F1C72FC62C2C5234009F31AD /* DupeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

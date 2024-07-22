@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct Square: View {
-    private let size = 50.0
-    private let bounceDuration = 0.2
-    private let bounceAmount = 0.2
+private let baseScale = 1.0
+private let bounceModifier = 0.2
+private let maxSize = baseScale + bounceModifier
+private let size = 50.0
+private let bounceDuration = 0.2
+private let bounceAmount = 0.2
 
+
+struct Square: View {
     var squareId: String = UUID().uuidString
     var row: Int
     var column: Int
@@ -20,33 +24,54 @@ struct Square: View {
     @Binding var currentSquareId: String?
     @Binding var dragPosition: CGPoint
 
-    @State private var viewModel = ViewModel()
-
+    @State private var scale = baseScale
+    @State private var color: Color = .blue
+    
+    private let cornerRadius: CGFloat = 8.0
+    
     var body: some View {
-        Color(.blue)
+        Color(color)
             .frame(width: size,
                    height: size)
-            .clipShape(.buttonBorder)
-            .scaleEffect(viewModel.scale)
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(.black, lineWidth: 5)
+            )
+            .scaleEffect(scale)
             .onChange(of: dragPosition) { _, newPosition in
                 handleDragChange(newPosition)
             }
     }
 
+    // MARK: - Animations -
+
+    private func grow() {
+        scale = maxSize
+        color = .white
+    }
+
+    private func shrink() {
+        scale = baseScale
+        color = .blue
+    }
+
+    // MARK: - Drag Calculation -
+
     private func onSquareDragOver() {
         withAnimation(.spring(duration: bounceDuration,
                               bounce: bounceAmount))
         {
-            viewModel.grow()
+            grow()
         } completion: {
             withAnimation(.spring(duration: bounceDuration,
                                   bounce: bounceAmount))
             {
-                viewModel.shrink()
+                shrink()
             }
         }
     }
-    
+
     private func handleDragChange(_ newPosition: CGPoint) {
         if isDraggingOverSquare(newPosition) {
             if currentSquareId != squareId {
@@ -66,6 +91,8 @@ struct Square: View {
         return position.x > xStart && position.x < xEnd && position.y > yStart && position.y < yEnd
     }
 }
+
+// MARK: - Preview -
 
 struct Square_Previews: PreviewProvider {
     @State private static var dragOffset: CGSize = .zero
